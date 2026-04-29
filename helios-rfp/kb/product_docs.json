@@ -1,0 +1,121 @@
+[
+  {
+    "doc_id": "doc-edr-architecture",
+    "title": "Helios EDR Architecture Overview",
+    "category": "technical",
+    "last_updated": "2024-03-01",
+    "content": "The Helios EDR platform consists of a lightweight kernel-mode sensor (<1% CPU, <60MB RAM) deployed on Windows, macOS, and Linux endpoints. Sensors stream telemetry over mTLS 1.3 to the regional Helios Cloud, where a Kafka-backed streaming pipeline applies behavioral rules, YARA, and an XGBoost classifier in parallel. Detection-to-alert latency: median 8s, p95 22s, p99 41s (Q4 2023 fleet benchmark, n=2.1M endpoints). Alerts surface in the Helios Console and forward to SIEM/SOAR via webhook, syslog, or native connectors."
+  },
+  {
+    "doc_id": "doc-data-sources",
+    "title": "Supported Data Sources & Integrations",
+    "category": "technical",
+    "last_updated": "2024-02-10",
+    "content": "Endpoint telemetry: process creation, file/registry modification, network connections, DNS, PowerShell/WMI, kernel callbacks. Cloud: AWS CloudTrail, GuardDuty, Azure Activity Log, Defender, GCP Audit, Google Workspace. Identity: Okta, Azure AD, Ping, Duo. Network: Palo Alto, Cisco ASA/FTD, Fortinet, Zscaler. Email: M365, Google Workspace, Proofpoint. 180+ connectors total; custom sources via syslog/CEF or REST Log Forwarder API."
+  },
+  {
+    "doc_id": "doc-data-residency",
+    "title": "Data Residency & Encryption",
+    "category": "technical",
+    "last_updated": "2024-01-20",
+    "content": "Helios Cloud operates in four isolated regions: us-east-1 (Virginia), us-west-2 (Oregon), eu-central-1 (Frankfurt), ap-southeast-2 (Sydney). Customer telemetry, detections, and case data are pinned to the tenant's home region and never replicated cross-region. Encryption at rest: AES-256-GCM via AWS KMS; customers may supply their own KMS key (BYOK) or an external HSM (Hold-Your-Own-Key, enterprise tier). Encryption in transit: TLS 1.3 with certificate pinning agent↔cloud, TLS 1.2+ for console/API. EU tenants are GDPR-aligned with an executed DPA and SCCs."
+  },
+  {
+    "doc_id": "doc-mdr-service",
+    "title": "Managed Detection & Response (MDR) Service Description",
+    "category": "technical",
+    "last_updated": "2024-03-15",
+    "content": "Helios MDR provides 24×7×365 monitoring by SOC analysts in Austin and Dublin (follow-the-sun). Service includes alert triage, threat hunting, guided response playbooks, and a 30-minute SLA for critical-severity human acknowledgement. Monthly threat briefings and quarterly tabletop exercises included for Enterprise tier."
+  },
+  {
+    "doc_id": "doc-deployment",
+    "title": "Deployment & Agent Management",
+    "category": "technical",
+    "last_updated": "2023-12-05",
+    "content": "Agents deploy via MSI/PKG/DEB/RPM, MDM (Intune, Jamf, Kandji), or script. Signed delta auto-update with staged rollout (1% canary → 25% → 100%) and automatic rollback. Customers may pin versions and require manual approval per release ring."
+  },
+  {
+    "doc_id": "doc-os-support",
+    "title": "Supported Operating Systems & Agent Footprint",
+    "category": "technical",
+    "last_updated": "2024-02-28",
+    "content": "Windows 10 (1809+), 11, Server 2016/2019/2022. macOS 12 Monterey through 14 Sonoma (Intel + Apple Silicon). Linux: RHEL/CentOS/Rocky 7–9, Ubuntu 18.04–24.04, Amazon Linux 2/2023, Debian 10–12, SUSE 15. ARM64 on macOS and Linux. Agent footprint: steady-state <1% CPU, <60MB RAM, <50MB disk; peak <5% CPU during scan."
+  },
+  {
+    "doc_id": "doc-api-reference",
+    "title": "Helios REST & GraphQL API Reference (Summary)",
+    "category": "technical",
+    "last_updated": "2024-03-20",
+    "content": "Base URL: https://api.<region>.helios.security/v2. Auth: bearer token (API key or OIDC). Resources: /detections, /assets, /cases, /response/actions, /intel/iocs, /audit. Rate limit 1,000 req/min/tenant (burst 5,000). Webhooks: alert.created, case.updated, asset.discovered. GraphQL at /graphql for cross-resource queries. SDKs: Python, Go, TypeScript."
+  },
+  {
+    "doc_id": "doc-response-actions",
+    "title": "Remote Response Actions Catalog",
+    "category": "technical",
+    "last_updated": "2024-01-10",
+    "content": "Console- and API-triggerable actions: network isolate host, kill process (by PID or hash), quarantine file, delete file, restore from quarantine, registry rollback, revoke user session (Okta/AzureAD), disable user, run signed remediation script (PowerShell/bash, opt-in). All actions logged to immutable audit trail with actor, target, timestamp, outcome."
+  },
+  {
+    "doc_id": "doc-sla",
+    "title": "Service Level Agreement",
+    "category": "technical",
+    "last_updated": "2024-01-01",
+    "content": "Console availability: 99.9% monthly. Alert delivery: 95% of high-severity detections alert within 60s of telemetry receipt. MDR P1 acknowledgement: 30 min. Support response: P1 30 min, P2 4h, P3 1 business day. Service credits: 10% for 99.0–99.9%, 25% for 95.0–99.0%, 50% below 95.0%."
+  },
+  {
+    "doc_id": "doc-retention",
+    "title": "Data Retention & Deletion Policy",
+    "category": "technical",
+    "last_updated": "2023-11-30",
+    "content": "Raw endpoint telemetry: 30 days hot (instant query), 13 months warm (S3, query <60s). Extended retention to 7 years available on Enterprise. Alerts/cases: contract life + 1 year. Audit logs: 7 years immutable. On contract termination, all customer data deleted within 30 days; deletion certificate issued on request."
+  },
+  {
+    "doc_id": "doc-rbac-sso",
+    "title": "Console RBAC, SSO & SCIM",
+    "category": "technical",
+    "last_updated": "2024-02-05",
+    "content": "Built-in roles: Viewer, Analyst, Responder, Admin, Billing, API-only. Custom roles via 40+ permissions. SSO: SAML 2.0 and OIDC (tested with Okta, Azure AD, Ping, Google). SCIM 2.0 for user/group provisioning. MFA enforced for local accounts; deferrable to IdP for SSO."
+  },
+  {
+    "doc_id": "doc-threat-intel",
+    "title": "Helios Labs Threat Intelligence Program",
+    "category": "technical",
+    "last_updated": "2024-03-10",
+    "content": "Helios Labs (12 researchers) curates IOCs, YARA rules, and behavioral detections from proprietary telemetry, commercial feeds (Recorded Future, Mandiant), OSINT (MISP, abuse.ch, GreyNoise), and ISAC sharing. Validated IOCs propagate to all tenants within 15 min. Tenants may submit IOCs for fleet-wide retro-hunt."
+  },
+  {
+    "doc_id": "doc-security-whitepaper",
+    "title": "Platform Security Whitepaper (Excerpt)",
+    "category": "compliance",
+    "last_updated": "2024-01-25",
+    "content": "Defense-in-depth: workload isolation per tenant via dedicated KMS keys + IAM boundaries; all internal service traffic mTLS; secrets in HashiCorp Vault; infrastructure-as-code (Terraform) with mandatory PR review; continuous cloud posture scanning via Wiz. Annual third-party pentest (NCC Group, last 2023-10). Bug bounty via HackerOne since 2022."
+  },
+  {
+    "doc_id": "doc-dpa-subprocessors",
+    "title": "Data Processing Agreement & Sub-Processor List",
+    "category": "compliance",
+    "last_updated": "2024-02-01",
+    "content": "DPA incorporates 2021 EU SCCs (modules 2 & 3) and UK IDTA. Sub-processors: AWS (IaaS, all regions), Snowflake (analytics warehouse, US-East / EU-Central only), Twilio (SMS/voice alerting, US), Zendesk (support ticketing, US, no telemetry). 30-day advance notice of sub-processor changes via trust.helios.security."
+  },
+  {
+    "doc_id": "doc-release-notes-2024q1",
+    "title": "Release Notes — 2024 Q1",
+    "category": "technical",
+    "last_updated": "2024-03-31",
+    "content": "Agent 7.2: Linux ARM64 GA, 18% lower memory footprint, new eBPF-based network sensor. Console: case timelines, GraphQL GA, custom-role builder. Detection: 140 new rules (LOLBins, AiTM phishing, AWS IMDSv1 abuse). Deprecated: TLS 1.1 on console (removed 2024-04-01)."
+  },
+  {
+    "doc_id": "blog-2024-rsac-recap",
+    "title": "Blog: Helios at RSAC 2024 — Booth Recap",
+    "category": "marketing",
+    "last_updated": "2024-05-10",
+    "content": "Thanks to everyone who stopped by booth #4410! Our live demo of one-click ransomware rollback drew crowds, and the Helios Labs talk on AiTM phishing was standing-room only. Swing by our happy hour next year — the branded socks will be back."
+  },
+  {
+    "doc_id": "hr-pto-policy",
+    "title": "Internal: Helios PTO & Holiday Policy",
+    "category": "internal",
+    "last_updated": "2024-01-02",
+    "content": "Full-time employees accrue 20 days PTO/year plus 11 company holidays. Unlimited sick leave. PTO requests via Workday with 2 weeks' notice for >3 consecutive days. This document is internal and not for customer distribution."
+  }
+]

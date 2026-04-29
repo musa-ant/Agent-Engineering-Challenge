@@ -1,0 +1,265 @@
+[
+  {
+    "doc_id": "rfp-2024-acme-bank",
+    "title": "ACME Bank RFP Response (Feb 2024)",
+    "prospect": "ACME Bank",
+    "vertical": "financial_services",
+    "qa_pairs": [
+      {
+        "category": "technical",
+        "question": "Describe your real-time threat detection capabilities.",
+        "answer": "Helios EDR ingests endpoint telemetry (process, file, registry, network), cloud audit logs (AWS CloudTrail, Azure Activity, GCP Audit), identity events (Okta, Azure AD), and email metadata. Our streaming detection engine applies 1,400+ behavioral rules and an ML classifier with a median detection-to-alert latency of 8 seconds (p95: 22 seconds) measured across our production fleet in Q4 2023."
+      },
+      {
+        "category": "compliance",
+        "question": "What compliance certifications do you hold?",
+        "answer": "Helios Security holds SOC 2 Type II (last audit completed 2024-01-15), ISO/IEC 27001:2022 (recertified 2023-11-02), and PCI DSS Level 1 Service Provider. We are FedRAMP Moderate 'In Process' with an expected ATO date of Q3 2024."
+      },
+      {
+        "category": "pricing",
+        "question": "What is your pricing model?",
+        "answer": "Per-endpoint annual subscription. List price $48/endpoint/year for EDR, $72/endpoint/year for EDR+MDR bundle. Volume discounts begin at 1,000 endpoints (10%) and 5,000 endpoints (22%). Minimum contract term is 12 months; multi-year discounts available."
+      },
+      {
+        "category": "company-info",
+        "question": "How many financial-services customers do you have?",
+        "answer": "As of Q1 2024 we serve 47 financial-services customers including regional banks, credit unions, and fintech platforms. Named references (with permission): Ridgeline Credit Union, Northstar Capital, and PayWave Inc."
+      },
+      {
+        "category": "technical",
+        "question": "Describe your data residency and encryption posture for EU customers.",
+        "answer": "EU customers are provisioned into our Frankfurt (eu-central-1) region; telemetry never leaves the EU boundary. Data at rest is encrypted with AES-256-GCM using customer-scoped keys managed in AWS KMS (BYOK supported). Data in transit uses TLS 1.3 with mutual authentication between agent and cloud."
+      },
+      {
+        "category": "technical",
+        "question": "What is your incident response process for a confirmed breach?",
+        "answer": "Helios MDR follows a 5-phase IR runbook: (1) detect & triage, (2) scope via timeline reconstruction, (3) contain via one-click host isolation and identity lockout, (4) eradicate, (5) post-incident report within 5 business days. Critical incidents receive a named IR lead within 30 minutes."
+      },
+      {
+        "category": "compliance",
+        "question": "Do you undergo annual penetration testing?",
+        "answer": "Yes. Third-party penetration tests are conducted annually by NCC Group (most recent: 2023-10) covering the cloud platform, agent, and console. An executive summary is available under NDA."
+      },
+      {
+        "category": "company-info",
+        "question": "What is your customer retention rate?",
+        "answer": "Gross logo retention for FY2023 was 94%; net revenue retention was 118%."
+      }
+    ]
+  },
+  {
+    "doc_id": "rfp-2023-globex-mfg",
+    "title": "Globex Manufacturing RFP Response (Sep 2023)",
+    "prospect": "Globex Manufacturing",
+    "vertical": "manufacturing",
+    "qa_pairs": [
+      {
+        "category": "technical",
+        "question": "What integrations does your SIEM support?",
+        "answer": "Helios SIEM ships with 180+ native connectors including Palo Alto, Cisco, Fortinet, CrowdStrike, Okta, Azure AD, AWS, GCP, Azure, ServiceNow, Jira, and Slack. A generic syslog/CEF ingestion endpoint and a REST Log Forwarder API cover custom sources."
+      },
+      {
+        "category": "compliance",
+        "question": "Provide your SOC 2 report date.",
+        "answer": "Our most recent SOC 2 Type II report covers the period ending 2023-06-30 and was issued 2023-08-10."
+      },
+      {
+        "category": "technical",
+        "question": "What is your alert latency SLA?",
+        "answer": "Contractual SLA: 95% of high-severity detections alert within 60 seconds of telemetry receipt. Measured median is under 10 seconds."
+      },
+      {
+        "category": "company-info",
+        "question": "Company size and headquarters?",
+        "answer": "Helios Security was founded in 2017, is headquartered in Austin TX, and employs ~410 FTEs across R&D (Austin, Tel Aviv) and operations (Austin, Dublin)."
+      },
+      {
+        "category": "technical",
+        "question": "Do you support OT/ICS environments?",
+        "answer": "The Helios sensor runs in passive-monitor mode on Windows-based HMIs and engineering workstations. We do not currently deploy agents on PLCs or RTUs; OT network visibility is achieved via the Claroty and Nozomi integrations."
+      },
+      {
+        "category": "pricing",
+        "question": "Is professional services / onboarding included?",
+        "answer": "A standard onboarding package (up to 40 hours of deployment assistance) is included for contracts of 1,000+ endpoints. Additional PS is available at $225/hour or via fixed-scope SOW."
+      }
+    ]
+  },
+  {
+    "doc_id": "rfp-2024-medora-health",
+    "title": "Medora Health RFP Response (Apr 2024)",
+    "prospect": "Medora Health",
+    "vertical": "healthcare",
+    "qa_pairs": [
+      {
+        "category": "compliance",
+        "question": "Are you HIPAA compliant? Will you sign a BAA?",
+        "answer": "Yes. Helios maintains a HIPAA Security Rule program audited annually by a third party (last assessment 2024-02-20). We will execute a Business Associate Agreement as part of the MSA."
+      },
+      {
+        "category": "pricing",
+        "question": "Do you offer volume discounts above 5,000 seats?",
+        "answer": "Yes. Tiered discounts: 1,000+ endpoints 10%, 5,000+ endpoints 22%, 10,000+ endpoints 30%. Custom enterprise pricing available above 25,000 endpoints."
+      },
+      {
+        "category": "technical",
+        "question": "How do you handle agent updates?",
+        "answer": "The Helios endpoint agent self-updates via a signed delta channel. Updates are staged: canary (1%) → broad (25%) → full, with automatic rollback on health-check failure. Customers can pin versions and approve releases via the console."
+      },
+      {
+        "category": "technical",
+        "question": "What operating systems does your agent support?",
+        "answer": "Windows 10/11 and Server 2016–2022; macOS 12+; Linux (RHEL/CentOS 7+, Ubuntu 18.04+, Amazon Linux 2, Debian 10+). ARM64 supported on macOS and Linux."
+      },
+      {
+        "category": "compliance",
+        "question": "Where is customer data stored and who has access?",
+        "answer": "Customer telemetry is stored in the tenant's home region (US, EU, or APAC) on AWS. Access by Helios personnel is role-based, MFA-enforced, logged, and limited to the MDR analyst team and on-call SRE. Customer data is never used to train shared ML models without opt-in."
+      },
+      {
+        "category": "technical",
+        "question": "Can the platform operate in a degraded / offline mode?",
+        "answer": "The endpoint sensor buffers telemetry locally (up to 500MB / 72h) when cloud connectivity is unavailable and resumes upload on reconnect. Local prevention rules continue to enforce while offline; cloud-side correlation and MDR triage resume after sync."
+      }
+    ]
+  },
+  {
+    "doc_id": "rfp-2024-vertex-retail",
+    "title": "Vertex Retail RFP Response (Jan 2024)",
+    "prospect": "Vertex Retail",
+    "vertical": "retail",
+    "qa_pairs": [
+      {
+        "category": "technical",
+        "question": "What cipher suites and TLS versions are supported?",
+        "answer": "Agent↔cloud: TLS 1.3 only, cipher suites TLS_AES_256_GCM_SHA384 and TLS_CHACHA20_POLY1305_SHA256, certificate pinning enforced. Console/API: TLS 1.2+ with modern cipher suites only (no CBC, no RSA key exchange)."
+      },
+      {
+        "category": "technical",
+        "question": "Is data encrypted at rest? What algorithm and key management?",
+        "answer": "Yes. AES-256-GCM via AWS KMS with per-tenant CMKs. Customers may bring their own KMS key (BYOK) or, on Enterprise tier, an external HSM (HYOK). Keys rotate annually or on demand."
+      },
+      {
+        "category": "compliance",
+        "question": "Are you PCI DSS certified?",
+        "answer": "Yes — PCI DSS v4.0 Level 1 Service Provider, assessed by Coalfire (AOC dated 2023-09-18), scoped to cardholder-data-adjacent log processing."
+      },
+      {
+        "category": "pricing",
+        "question": "What are your payment terms?",
+        "answer": "Annual in advance, net-30. Quarterly billing available for contracts >5,000 endpoints. True-up for endpoint growth occurs quarterly at the then-current tier price."
+      },
+      {
+        "category": "technical",
+        "question": "Describe your RBAC model for the admin console.",
+        "answer": "The Helios Console supports role-based access with 6 built-in roles (Viewer, Analyst, Responder, Admin, Billing, API-only) and custom roles with 40+ granular permissions. SSO via SAML 2.0 / OIDC; SCIM 2.0 for provisioning."
+      },
+      {
+        "category": "technical",
+        "question": "What is your data retention policy?",
+        "answer": "Raw telemetry: 30 days hot, 13 months warm (configurable up to 7 years on Enterprise). Alerts and cases: retained for contract life + 1 year. Customers may request earlier deletion at any time."
+      },
+      {
+        "category": "company-info",
+        "question": "Who are your primary competitors?",
+        "answer": "We are most frequently evaluated against CrowdStrike Falcon, SentinelOne Singularity, and Microsoft Defender for Endpoint. Our differentiation is the bundled MDR service and mid-market pricing."
+      },
+      {
+        "category": "technical",
+        "question": "Do you provide an API? What is the rate limit?",
+        "answer": "Yes — a REST API and a GraphQL endpoint cover detections, assets, cases, and response actions. Rate limit: 1,000 requests/min per tenant (burstable to 5,000). Webhooks available for alert push."
+      }
+    ]
+  },
+  {
+    "doc_id": "rfp-2023-northstar-capital",
+    "title": "Northstar Capital RFP Response (Nov 2023)",
+    "prospect": "Northstar Capital",
+    "vertical": "financial_services",
+    "qa_pairs": [
+      {
+        "category": "technical",
+        "question": "Explain how your ML detection models are trained and updated.",
+        "answer": "Detection models (XGBoost + a transformer-based sequence classifier) are trained on anonymized, aggregated telemetry from opted-in tenants plus curated threat-intel corpora. Models retrain weekly; new versions deploy via the same staged-rollout pipeline as agent updates and can be rolled back per-tenant."
+      },
+      {
+        "category": "technical",
+        "question": "What response actions can analysts take from the console?",
+        "answer": "Host isolation (network quarantine), process kill, file quarantine/delete, registry key rollback, user session revoke (via IdP integration), and custom script execution (signed, opt-in). All actions are audited."
+      },
+      {
+        "category": "compliance",
+        "question": "Describe your vulnerability management program.",
+        "answer": "Continuous scanning via Wiz (cloud) and Qualys (corp). SLAs: critical 7 days, high 30 days, medium 90 days. Results feed the SOC 2 CC7.1 control set."
+      },
+      {
+        "category": "compliance",
+        "question": "Do you carry cyber liability insurance?",
+        "answer": "Yes — $10M aggregate cyber/tech E&O policy via Beazley, renewed annually. COI available on request."
+      },
+      {
+        "category": "company-info",
+        "question": "Describe your executive team's background.",
+        "answer": "CEO Dana Okafor (ex-FireEye VP Product), CTO Ilan Regev (ex-Unit 8200, ex-Palo Alto Networks), CISO Maria Chen (ex-JPMorgan Chase). Board includes partners from Insight and Accel."
+      },
+      {
+        "category": "technical",
+        "question": "How do you protect against supply-chain attacks on your own agent?",
+        "answer": "Agent binaries are reproducibly built in an isolated CI, signed with an HSM-backed code-signing cert, and delivered over pinned TLS. SBOMs (CycloneDX) are published per release. The update channel verifies signature + hash before apply."
+      },
+      {
+        "category": "pricing",
+        "question": "Are there any add-on modules priced separately?",
+        "answer": "Optional add-ons: Threat Intel Feed ($6/endpoint/yr), Cloud Security Posture module ($1.50/cloud-asset/mo), and Extended Data Retention (priced per TB-month). MDR is the only bundled add-on (HEL-BUNDLE)."
+      }
+    ]
+  },
+  {
+    "doc_id": "rfp-2024-cascade-energy",
+    "title": "Cascade Energy RFP Response (Mar 2024)",
+    "prospect": "Cascade Energy",
+    "vertical": "energy",
+    "qa_pairs": [
+      {
+        "category": "technical",
+        "question": "What is your platform's architecture for high availability?",
+        "answer": "Each Helios Cloud region runs active-active across 3 AZs. Ingest, detection, and storage tiers scale independently behind regional load balancers. RTO < 15 min, RPO < 5 min for in-region failures. Cross-region DR is available on Enterprise (RTO 4h)."
+      },
+      {
+        "category": "technical",
+        "question": "Describe your logging and audit trail capabilities.",
+        "answer": "Every console action, API call, and analyst response is written to an immutable audit log (append-only, hash-chained). Audit logs export to customer SIEM via syslog or S3 and are retained 7 years."
+      },
+      {
+        "category": "compliance",
+        "question": "Have you completed a NERC CIP assessment?",
+        "answer": "Helios has not undergone a formal NERC CIP audit. We provide a CIP-aligned control mapping document and have customers operating in BES environments using our passive-monitor mode, but we do not claim CIP certification."
+      },
+      {
+        "category": "technical",
+        "question": "What threat intelligence sources do you use?",
+        "answer": "Proprietary Helios Labs research, commercial feeds (Recorded Future, Mandiant), open-source (MISP, abuse.ch), and ISAC sharing (FS-ISAC, H-ISAC). IOCs propagate to all tenants within 15 minutes of validation."
+      },
+      {
+        "category": "company-info",
+        "question": "What is your support model and SLA?",
+        "answer": "24×7 follow-the-sun support from Austin and Dublin. P1 response SLA 30 min, P2 4h, P3 1 business day. Named CSM for contracts >2,500 endpoints."
+      },
+      {
+        "category": "pricing",
+        "question": "Do you offer a proof-of-concept or trial?",
+        "answer": "Yes — a 30-day POC on up to 250 endpoints at no cost, with a dedicated SE. POC converts to paid with credit for any data already ingested."
+      },
+      {
+        "category": "technical",
+        "question": "How does your platform handle false positives?",
+        "answer": "Analysts can suppress by rule, hash, path, or behavioral pattern with tenant-scoped or global scope. Suppression suggestions are auto-generated after 3 identical dismissals. MDR tier includes tuning by Helios analysts during the first 30 days."
+      },
+      {
+        "category": "compliance",
+        "question": "Provide your data processing agreement and sub-processor list.",
+        "answer": "Our DPA (incorporating the 2021 EU SCCs and UK IDTA) is available at helios.security/legal/dpa. Current sub-processors: AWS (infrastructure), Snowflake (analytics, US/EU only), Twilio (alert SMS), Zendesk (support tickets)."
+      }
+    ]
+  }
+]

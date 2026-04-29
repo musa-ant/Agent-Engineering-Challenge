@@ -91,16 +91,24 @@ options = ClaudeAgentOptions(mcp_servers={"kb": kb_server}, allowed_tools=["mcp_
 
 ## 5. Mock data design (this is graded!)
 
+**Tier: Medium (~80 searchable chunks).** Big enough that `search_kb` has to discriminate
+between near-duplicate phrasings; small enough that keyword scoring stays debuggable in
+a 55-min build window.
+
 | File | What's in it | Why it matters for evals |
 |---|---|---|
-| `kb/past_rfps.json` | 3 prior RFPs, 12 Q/A pairs across all 4 categories | Primary retrieval corpus. **Contains a deliberately stale SOC 2 date** (Globex 2023 vs cert record 2024) → consistency-reviewer test. |
-| `kb/product_docs.json` | 5 docs: EDR arch, data sources, residency/encryption, MDR, deployment | Authoritative latency numbers (median 8s / p95 22s), agent footprint, EU region details. |
-| `kb/compliance.json` | 6 certs w/ auditor, date, status | Includes `FedRAMP Moderate: in_process` → RFP-003 Q1 "FedRAMP High?" should answer **No** with nuance. |
-| `kb/pricing.json` | SKUs, tier table, terms, **worked examples for 500/1k/5k** | Lets agent answer Q3 with exact numbers, not arithmetic. |
+| `kb/past_rfps.json` | **6 prior RFPs, 43 Q/A pairs** across all 4 categories + 2 new verticals (retail, energy) | Primary retrieval corpus. Many near-duplicate phrasings ("encryption at rest" vs "what cipher suites" vs "key management"). **Deliberately stale SOC 2 date** (Globex 2023) and an honest "we don't have NERC CIP" answer → consistency + calibration tests. |
+| `kb/product_docs.json` | **17 docs**: arch, data sources, residency, MDR, deployment, OS support, API ref, response actions, SLA, retention, RBAC/SSO, threat intel, security whitepaper, DPA/sub-processors, release notes, **+ 2 distractor docs** (marketing blog, HR PTO policy) | Authoritative numbers. Distractors test retrieval precision — they should *never* be cited. |
+| `kb/compliance.json` | 6 certs w/ auditor, date, status | Includes `FedRAMP Moderate: in_process` → "FedRAMP High?" should answer **No** with nuance. |
+| `kb/pricing.json` | SKUs, tier table, terms, **worked examples for 500/1k/5k** | Lets agent answer pricing Qs with exact numbers, not arithmetic. |
 | `kb/company.json` | HQ, headcount, vertical counts, named references | Direct hit for company-info Qs. |
 | `sample_rfps/rfp_001.json` | The 5 brief questions verbatim | Happy path. |
 | `sample_rfps/rfp_002.json` | 6 mixed Qs | Second happy path, different facts. |
 | `sample_rfps/rfp_003_edgecases.json` | FedRAMP High (no), air-gapped (no KB match), EUR pricing (partial), 3-in-1 multi-part, quantum roadmap (no KB match) | Every edge-case eval lives here. |
+| `sample_rfps/rfp_004_large.json` | **25-question RFP** spanning every category | Scale demo: shows per-Q fan-out parallelism + confidence flagging across a realistic mid-size questionnaire. Q25 (quantum) deliberately has no KB coverage. |
+
+**Chunk count:** 43 past-RFP answers + 17 product docs + 6 compliance + 1 pricing + 1 company = **~68 searchable chunks** (plus distractors).
+
 
 ---
 

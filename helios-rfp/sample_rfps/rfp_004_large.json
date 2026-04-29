@@ -1,0 +1,108 @@
+{
+  "rfp_id": "RFP-004-large",
+  "prospect": "Summit Insurance Group",
+  "vertical": "financial_services",
+  "context": "25-question RFP to demonstrate scale, parallelism, and confidence calibration on a realistic mid-size questionnaire.",
+  "questions": [
+    {
+      "id": "Q1",
+      "text": "Provide an overview of your endpoint detection architecture and the telemetry types collected."
+    },
+    {
+      "id": "Q2",
+      "text": "What is your median and p95 detection-to-alert latency? How is it measured?"
+    },
+    {
+      "id": "Q3",
+      "text": "List all operating systems and versions your agent supports, including ARM64."
+    },
+    {
+      "id": "Q4",
+      "text": "What is the agent's CPU, memory, and disk footprint at steady state and peak?"
+    },
+    {
+      "id": "Q5",
+      "text": "Describe your agent update mechanism and rollback safeguards."
+    },
+    {
+      "id": "Q6",
+      "text": "Which identity providers do you integrate with for SSO and for identity-threat detection?"
+    },
+    {
+      "id": "Q7",
+      "text": "List all current compliance certifications, auditors, and most recent audit dates."
+    },
+    {
+      "id": "Q8",
+      "text": "What is your FedRAMP authorization status?"
+    },
+    {
+      "id": "Q9",
+      "text": "Describe your penetration testing cadence and provider."
+    },
+    {
+      "id": "Q10",
+      "text": "Do you carry cyber liability / tech E&O insurance? State coverage limits."
+    },
+    {
+      "id": "Q11",
+      "text": "Provide per-endpoint annual pricing for 500, 2,500, and 10,000 endpoints (EDR only and EDR+MDR)."
+    },
+    {
+      "id": "Q12",
+      "text": "What is the minimum contract term and what multi-year discounts are available?"
+    },
+    {
+      "id": "Q13",
+      "text": "Are professional services / onboarding included? At what threshold?"
+    },
+    {
+      "id": "Q14",
+      "text": "Describe your data residency options and how EU customer data is isolated."
+    },
+    {
+      "id": "Q15",
+      "text": "What encryption is applied at rest and in transit? Which key-management options are offered?"
+    },
+    {
+      "id": "Q16",
+      "text": "What is your data retention policy for raw telemetry, alerts, and audit logs?"
+    },
+    {
+      "id": "Q17",
+      "text": "Describe your console RBAC model and SCIM support."
+    },
+    {
+      "id": "Q18",
+      "text": "What remote response actions can be executed from the console or API?"
+    },
+    {
+      "id": "Q19",
+      "text": "What is your console availability SLA and the associated service credit schedule?"
+    },
+    {
+      "id": "Q20",
+      "text": "List your current sub-processors and your notification policy for changes."
+    },
+    {
+      "id": "Q21",
+      "text": "How many customers do you serve in the financial services vertical? Name 2 references."
+    },
+    {
+      "id": "Q22",
+      "text": "Provide company founding year, headquarters, employee count, and funding stage."
+    },
+    {
+      "id": "Q23",
+      "text": "What is your customer logo retention and net revenue retention?"
+    },
+    {
+      "id": "Q24",
+      "text": "Do you offer a no-cost proof-of-concept? What are the terms?"
+    },
+    {
+      "id": "Q25",
+      "text": "Describe your roadmap for post-quantum / quantum-resistant cryptography."
+    }
+  ]
+}
