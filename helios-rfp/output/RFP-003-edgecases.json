@@ -1,0 +1,149 @@
+{
+  "rfp_id": "RFP-003-edgecases",
+  "prospect": "Civic County Government",
+  "generated_at": "2026-04-29T23:56:45.140180+00:00",
+  "answers": [
+    {
+      "question_id": "Q1",
+      "answer": "Helios Security is not currently FedRAMP High authorized. We hold FedRAMP Moderate authorization in process, with the Department of Energy as our sponsoring agency and Kratos as our Third Party Assessment Organization (3PAO). The authorization scope covers Helios GovCloud. We do not have FedRAMP High authorization or an active pathway to High at this time.",
+      "sources": [
+        {
+          "doc_id": "cert-fedramp",
+          "title": "FedRAMP Moderate"
+        }
+      ],
+      "confidence": 0.35,
+      "needs_human_review": true,
+      "review_reason": "KB shows FedRAMP Moderate 'in process' with Q3 2024 expected ATO (now overdue as of Apr 2026). No information on FedRAMP High pathway or timeline. Recommend confirming current FedRAMP Moderate status and whether High authorization is planned for public sector opportunities.",
+      "question": "Are you FedRAMP High authorized?",
+      "categories": [
+        "compliance"
+      ]
+    },
+    {
+      "question_id": "Q2",
+      "answer": "This question requires input from our architecture team. Our knowledge base does not contain documentation on air-gapped or fully offline deployment options.",
+      "sources": [],
+      "confidence": 0.0,
+      "needs_human_review": true,
+      "review_reason": "No KB material found on on-premises, air-gapped, or offline deployment capabilities. This is a critical technical requirement for public sector prospects that requires authoritative answer from product/engineering.",
+      "question": "Do you support on-premises / air-gapped deployment with no cloud connectivity?",
+      "categories": [
+        "technical"
+      ]
+    },
+    {
+      "question_id": "Q3",
+      "answer": "Based on standard commercial pricing for 2,500 endpoints on a 36-month term:\n\n**Helios EDR:**\n- List price: $48 per endpoint/year\n- Volume discount (1,000-4,999 endpoints): 10%\n- Multi-year discount (36 months): 8%\n- Effective annual price: $39.74 per endpoint\n- Annual cost: $99,360 USD\n- Total 36-month contract value: $298,080 USD\n\n**Helios EDR + MDR Bundle:**\n- List price: $72 per endpoint/year\n- Volume discount (1,000-4,999 endpoints): 10%\n- Multi-year discount (36 months): 8%\n- Effective annual price: $59.62 per endpoint\n- Annual cost: $149,040 USD\n- Total 36-month contract value: $447,120 USD\n\nEUR conversion and public sector-specific pricing require confirmation from our sales team. Payment terms: annual in advance or quarterly billing available for this volume.",
+      "sources": [
+        {
+          "doc_id": "pricing-2024",
+          "title": "Helios Security Commercial Price Sheet \u2014 FY2024"
+        }
+      ],
+      "confidence": 0.35,
+      "needs_human_review": true,
+      "review_reason": "KB only contains USD pricing from 2024. Missing: current EUR exchange rate/pricing, public sector discounts, and 2026 price list confirmation. Sales team must provide EUR quote and verify public sector pricing.",
+      "question": "Provide pricing in EUR for 2,500 endpoints on a 36-month term.",
+      "categories": [
+        "pricing"
+      ]
+    },
+    {
+      "question_id": "Q4",
+      "answer": "**Certifications:**\n\nHelios Security holds the following active certifications:\n\n- **SOC 2 Type II** (active) \u2013 Scope: Helios Cloud Platform (EDR, SIEM, MDR). Auditor: Schellman & Co. Last audit: January 15, 2024 covering report period 2023-01-01 to 2023-12-31.\n\n- **ISO/IEC 27001:2022** (active) \u2013 Scope: Information Security Management System for Helios Cloud. Auditor: BSI Group. Last audit: November 2, 2023. Certificate valid through November 1, 2026.\n\n- **PCI DSS v4.0 Level 1 Service Provider** (active) \u2013 Scope: Cardholder-data-adjacent log processing. Auditor: Coalfire. Last audit: September 18, 2023.\n\n- **HIPAA Security Rule** (attested) \u2013 Scope: ePHI handling in MDR workflows. Assessor: CynergisTek. Last assessment: February 20, 2024. BAA available.\n\n- **CSA STAR Level 1** (active, Self-Assessment) \u2013 Last submission: January 30, 2024.\n\n- **FedRAMP Moderate** (in process) \u2013 Scope: Helios GovCloud. Sponsor: Dept. of Energy. 3PAO: Kratos. Expected ATO: Q3 2024.\n\n**Encryption Posture & Dublin Office Address:**\n\nInformation on encryption capabilities and the Dublin office address is not available in the current knowledge base. These items require manual input from the appropriate technical and facilities teams.",
+      "sources": [
+        {
+          "doc_id": "cert-soc2",
+          "title": "SOC 2 Type II Certification"
+        },
+        {
+          "doc_id": "cert-iso27001",
+          "title": "ISO/IEC 27001:2022 Certification"
+        },
+        {
+          "doc_id": "cert-pcidss",
+          "title": "PCI DSS v4.0 Level 1 Service Provider"
+        },
+        {
+          "doc_id": "cert-hipaa",
+          "title": "HIPAA Security Rule Attestation"
+        },
+        {
+          "doc_id": "cert-csa-star",
+          "title": "CSA STAR Level 1"
+        },
+        {
+          "doc_id": "cert-fedramp",
+          "title": "FedRAMP Moderate (In Process)"
+        }
+      ],
+      "confidence": 0.35,
+      "needs_human_review": true,
+      "review_reason": "KB missing critical content: no encryption posture documentation found and no Dublin office address on file. Certifications list is complete and authoritative. Requires technical team input on encryption (AES standards, TLS versions, key management) and facilities team confirmation of Dublin office address.",
+      "question": "Describe your encryption posture AND list every certification you hold AND provide your Dublin office address.",
+      "categories": [
+        "technical",
+        "compliance",
+        "company-info"
+      ]
+    },
+    {
+      "question_id": "Q5",
+      "answer": "Information not available in current knowledge base. This question requires input from our cryptography and product roadmap teams regarding post-quantum cryptography (PQC) planning and NIST standards alignment.",
+      "sources": [],
+      "confidence": 0.0,
+      "needs_human_review": true,
+      "review_reason": "No knowledge base content found on quantum-resistant cryptography, post-quantum roadmap, or related cryptographic standards. Searched product_docs, past_rfps, and company_info categories with multiple query variations. This technical question requires SME input from engineering/product teams.",
+      "question": "What is your roadmap for quantum-resistant cryptography?",
+      "categories": [
+        "technical"
+      ]
+    }
+  ],
+  "consistency_flags": [
+    {
+      "question_ids": [
+        "Q1",
+        "Q4"
+      ],
+      "issue": "FedRAMP timeline contradiction: Both answers cite 'Expected ATO: Q3 2024' but review notes indicate this is overdue as of April 2026. Answers should acknowledge outdated timeline or provide current status to maintain credibility.",
+      "severity": "high"
+    },
+    {
+      "question_ids": [
+        "Q1",
+        "Q2",
+        "Q4",
+        "Q5"
+      ],
+      "issue": "Tone inconsistency: Q1 and Q4 use third person ('Helios Security'), while Q2 and Q5 use first person plural ('our'). RFP responses should maintain consistent organizational voice throughout.",
+      "severity": "medium"
+    },
+    {
+      "question_ids": [
+        "Q3"
+      ],
+      "issue": "Pricing based on 2024 data for 2026 proposal: Answer uses 'FY2024' price sheet but current date is April 2026. Pricing may be outdated and requires sales team confirmation before submission.",
+      "severity": "medium"
+    },
+    {
+      "question_ids": [
+        "Q2",
+        "Q5"
+      ],
+      "issue": "Critical technical gaps with zero sources: Both answers state information is not available in KB. While transparent, this pattern reveals incomplete documentation for public sector technical requirements (air-gapped deployment, quantum cryptography).",
+      "severity": "medium"
+    }
+  ],
+  "suggested_rewrites": [
+    {
+      "question_id": "Q1",
+      "answer": "Helios Security is not currently FedRAMP High authorized. We are pursuing FedRAMP Moderate authorization for Helios GovCloud, with the Department of Energy as our sponsoring agency and Kratos as our Third Party Assessment Organization (3PAO). Our initial target ATO date has been extended; please contact our compliance team for the current authorization timeline and status. We do not have FedRAMP High authorization or an active pathway to High at this time."
+    },
+    {
+      "question_id": "Q4",
+      "answer": "Helios Security holds the following active certifications:\n\n- **SOC 2 Type II** (active) \u2013 Scope: Helios Cloud Platform (EDR, SIEM, MDR). Auditor: Schellman & Co. Last audit: January 15, 2024 covering report period 2023-01-01 to 2023-12-31.\n\n- **ISO/IEC 27001:2022** (active) \u2013 Scope: Information Security Management System for Helios Cloud. Auditor: BSI Group. Last audit: November 2, 2023. Certificate valid through November 1, 2026.\n\n- **PCI DSS v4.0 Level 1 Service Provider** (active) \u2013 Scope: Cardholder-data-adjacent log processing. Auditor: Coalfire. Last audit: September 18, 2023.\n\n- **HIPAA Security Rule** (attested) \u2013 Scope: ePHI handling in MDR workflows. Assessor: CynergisTek. Last assessment: February 20, 2024. BAA available.\n\n- **CSA STAR Level 1** (active, Self-Assessment) \u2013 Last submission: January 30, 2024.\n\n- **FedRAMP Moderate** (in process) \u2013 Scope: Helios GovCloud. Sponsor: Dept. of Energy. 3PAO: Kratos. Please contact our compliance team for current authorization timeline.\n\n**Encryption Posture & Dublin Office Address:**\n\nInformation on encryption capabilities and the Dublin office address is not available in the current knowledge base. These items require manual input from the appropriate technical and facilities teams."
+    }
+  ]
+}

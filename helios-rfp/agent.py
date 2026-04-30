@@ -77,7 +77,7 @@ async def draft_one(rfp: dict, q: dict) -> dict:
         system_prompt=DRAFTER_SYSTEM,
         mcp_servers={"kb": kb_server},
         allowed_tools=KB_TOOLS,
-        permission_mode="acceptAll",
+        permission_mode="bypassPermissions",
         max_turns=8,
     )
     user = (
@@ -88,7 +88,16 @@ async def draft_one(rfp: dict, q: dict) -> dict:
     async with ClaudeSDKClient(options=options) as client:
         await client.query(user)
         text = await _collect_text(client.receive_response())
-    draft = _extract_json(text)
+    try:
+        draft = _extract_json(text)
+    except (json.JSONDecodeError, ValueError) as exc:
+        draft = {
+            "answer": (text or "").strip()[:2000] or "(no model output)",
+            "sources": [],
+            "confidence": 0.0,
+            "needs_human_review": True,
+            "review_reason": f"Drafter output was not valid JSON: {exc}",
+        }
     draft.setdefault("question_id", q["id"])
     draft["question"] = q["text"]
     draft["categories"] = q["categories"]

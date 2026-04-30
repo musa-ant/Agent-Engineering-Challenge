@@ -1,0 +1,126 @@
+{
+  "rfp_id": "RFP-002",
+  "prospect": "Orbital Logistics",
+  "generated_at": "2026-04-29T23:55:06.385038+00:00",
+  "answers": [
+    {
+      "question_id": "Q1",
+      "answer": "Information regarding contractual SLAs for high-severity alert delivery and measured median latency metrics is not available in our current knowledge base.",
+      "sources": [],
+      "confidence": 0.0,
+      "needs_human_review": true,
+      "review_reason": "KB contains no information on alert delivery SLAs or latency metrics. This technical question requires input from product/engineering teams to provide: (1) contractual SLA commitments for high-severity alerts, and (2) actual measured median latency performance data.",
+      "question": "What is your contractual SLA for high-severity alert delivery, and what is your measured median latency?",
+      "categories": [
+        "technical"
+      ]
+    },
+    {
+      "question_id": "Q2",
+      "answer": "We are unable to provide specific vendor integration details at this time without access to our current integration documentation.",
+      "sources": [],
+      "confidence": 0.0,
+      "needs_human_review": true,
+      "review_reason": "No KB content found on network/identity vendor integrations. Searched product docs and RFP history for: integrations, identity vendors, SSO, authentication, network vendors, SIEM, and specific vendor names. This answer requires input from product/engineering team on current integration partnerships.",
+      "question": "Which network and identity vendors do you integrate with out of the box?",
+      "categories": [
+        "technical"
+      ]
+    },
+    {
+      "question_id": "Q3",
+      "answer": "Yes. Helios Security holds an active SOC 2 Type II certification. Our auditor is Schellman & Co., and the most recent report was issued January 15, 2024, covering the audit period January 1, 2023 through December 31, 2023. The certification scope includes the Helios Cloud Platform (EDR, SIEM, and MDR services). We are currently undergoing our 2025 audit cycle.",
+      "sources": [
+        {
+          "doc_id": "cert-soc2",
+          "title": "SOC 2 Type II"
+        }
+      ],
+      "confidence": 1.0,
+      "needs_human_review": true,
+      "review_reason": " [flagged by consistency reviewer]",
+      "question": "Do you hold SOC 2 Type II? Who is your auditor and when was the last report issued?",
+      "categories": [
+        "compliance"
+      ]
+    },
+    {
+      "question_id": "Q4",
+      "answer": "Information not available in knowledge base. This question requires technical specifications about the Helios endpoint agent's resource footprint (CPU and memory consumption) and its update/patch deployment mechanism. No relevant documentation was found.",
+      "sources": [],
+      "confidence": 0.0,
+      "needs_human_review": true,
+      "review_reason": "KB contains no documentation on endpoint agent system requirements, resource footprint, or update mechanisms. Technical product documentation needed from engineering team before answering.",
+      "question": "Describe your endpoint agent footprint (CPU/memory) and update mechanism.",
+      "categories": [
+        "technical"
+      ]
+    },
+    {
+      "question_id": "Q5",
+      "answer": "The minimum contract term is 12 months. Multi-year discounts are available: 2-year commitments receive a 5% discount, and 3-year commitments receive an 8% discount. These discounts apply in addition to any volume-based pricing tiers.",
+      "sources": [
+        {
+          "doc_id": "pricing-2024",
+          "title": "Helios Security Commercial Price Sheet \u2014 FY2024"
+        }
+      ],
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "review_reason": null,
+      "question": "What is the minimum contract term and are multi-year discounts offered?",
+      "categories": [
+        "pricing"
+      ]
+    },
+    {
+      "question_id": "Q6",
+      "answer": "Helios Security is headquartered in Austin, Texas. We currently employ 410 full-time employees across our three global offices in Austin TX, Tel Aviv IL, and Dublin IE.",
+      "sources": [
+        {
+          "doc_id": "company-factsheet-2024",
+          "title": "Helios Security Company Fact Sheet"
+        }
+      ],
+      "confidence": 0.95,
+      "needs_human_review": true,
+      "review_reason": " [flagged by consistency reviewer]",
+      "question": "Where is your company headquartered and how many employees do you have?",
+      "categories": [
+        "company-info"
+      ]
+    }
+  ],
+  "consistency_flags": [
+    {
+      "question_ids": [
+        "Q3"
+      ],
+      "issue": "Date inconsistency: Answer states 'currently undergoing our 2025 audit cycle' but today's date is 2026-04-29. This temporal reference is impossible/stale.",
+      "severity": "high"
+    },
+    {
+      "question_ids": [
+        "Q2",
+        "Q3",
+        "Q6"
+      ],
+      "issue": "Tone inconsistency: Mix of first-person plural ('We are unable', 'We currently employ') vs third-person ('Helios Security holds', 'Helios Security is headquartered'). Q3 and Q6 also shift perspective mid-answer.",
+      "severity": "medium"
+    },
+    {
+      "question_ids": [
+        "Q1",
+        "Q4"
+      ],
+      "issue": "Minor tone variance in 'information not available' responses: Q1 uses passive third-person ('Information regarding...is not available'), Q4 uses declarative third-person ('Information not available'). Not critical but could be standardized.",
+      "severity": "low"
+    }
+  ],
+  "suggested_rewrites": [
+    {
+      "question_id": "Q3",
+      "answer": "Yes. Helios Security holds an active SOC 2 Type II certification. Our auditor is Schellman & Co., and the most recent report was issued January 15, 2024, covering the audit period January 1, 2023 through December 31, 2023. The certification scope includes the Helios Cloud Platform (EDR, SIEM, and MDR services). Our 2026 audit cycle is currently in progress."
+    }
+  ]
+}

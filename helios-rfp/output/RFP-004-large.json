@@ -1,0 +1,429 @@
+{
+  "rfp_id": "RFP-004-large",
+  "prospect": "Summit Insurance Group",
+  "generated_at": "2026-04-30T00:01:16.605256+00:00",
+  "answers": [
+    {
+      "question_id": "Q1",
+      "answer": "Unable to provide answer - no relevant information found in knowledge base regarding endpoint detection architecture or telemetry types collected.",
+      "sources": [],
+      "confidence": 0.0,
+      "needs_human_review": true,
+      "review_reason": "No KB content found for endpoint detection architecture or telemetry collection despite multiple searches across product_docs and past_rfps categories. This technical question requires SME input to provide accurate architectural details and telemetry specifications.",
+      "question": "Provide an overview of your endpoint detection architecture and the telemetry types collected.",
+      "categories": [
+        "technical"
+      ]
+    },
+    {
+      "answer": "I'll search the knowledge base for information about detection-to-alert latency metrics.",
+      "sources": [],
+      "confidence": 0.0,
+      "needs_human_review": true,
+      "review_reason": "Drafter output was not valid JSON: Expecting value: line 1 column 1 (char 0)",
+      "question_id": "Q2",
+      "question": "What is your median and p95 detection-to-alert latency? How is it measured?",
+      "categories": [
+        "technical"
+      ]
+    },
+    {
+      "question_id": "Q3",
+      "answer": "The Helios agent supports the following operating systems and versions:\n\n**Windows**\n- Windows 10 (build 1809 or later)\n- Windows 11\n- Windows Server 2016, 2019, 2022\n\n**macOS**\n- macOS 12 Monterey through 14 Sonoma\n- Both Intel and Apple Silicon (ARM64) architectures\n\n**Linux**\n- RHEL/CentOS/Rocky Linux 7, 8, 9\n- Ubuntu 18.04 LTS through 24.04 LTS\n- Amazon Linux 2 and Amazon Linux 2023\n- Debian 10, 11, 12\n- SUSE Linux Enterprise 15\n- ARM64 architecture supported on all Linux distributions listed above\n\nARM64 support is available on both macOS (Apple Silicon) and Linux platforms, reaching general availability in Agent 7.2. The agent maintains a minimal footprint across all platforms: steady-state usage under 1% CPU, under 60MB RAM, and under 50MB disk space.",
+      "sources": [
+        {
+          "doc_id": "doc-os-support",
+          "title": "Supported Operating Systems & Agent Footprint"
+        },
+        {
+          "doc_id": "doc-release-notes-2024q1",
+          "title": "Release Notes \u2014 2024 Q1"
+        }
+      ],
+      "confidence": 0.95,
+      "needs_human_review": false,
+      "review_reason": null,
+      "question": "List all operating systems and versions your agent supports, including ARM64.",
+      "categories": [
+        "technical"
+      ]
+    },
+    {
+      "question_id": "Q4",
+      "answer": "The Helios agent maintains a minimal resource footprint:\n\n**Steady State:**\n- CPU: <1%\n- Memory: <60 MB RAM\n- Disk: <50 MB\n\n**Peak (during active scanning):**\n- CPU: <5%\n- Memory: <60 MB RAM\n- Disk: <50 MB\n\nThe agent is designed for continuous operation with negligible performance impact on production systems.",
+      "sources": [
+        {
+          "doc_id": "doc-os-support",
+          "title": "Supported Operating Systems & Agent Footprint"
+        }
+      ],
+      "confidence": 0.95,
+      "needs_human_review": false,
+      "review_reason": null,
+      "question": "What is the agent's CPU, memory, and disk footprint at steady state and peak?",
+      "categories": [
+        "technical"
+      ]
+    },
+    {
+      "question_id": "Q5",
+      "answer": "Information about Helios Security's agent update mechanism and rollback safeguards is not currently available in our knowledge base. This technical specification requires input from the product engineering team to provide accurate details on update deployment processes, version control procedures, rollback protocols, and safety mechanisms.",
+      "sources": [],
+      "confidence": 0.0,
+      "needs_human_review": true,
+      "review_reason": "No KB documentation found on agent update mechanisms, rollback procedures, or deployment safeguards. Searched product_docs, technical_specs, and past_rfps with queries covering: update mechanisms, rollback, deployment, version control, patch management, and recovery processes. This technical question requires SME input from engineering.",
+      "question": "Describe your agent update mechanism and rollback safeguards.",
+      "categories": [
+        "technical"
+      ]
+    },
+    {
+      "question_id": "Q6",
+      "answer": "I was unable to locate specific information about our identity provider integrations in the available documentation. This question requires input from our product and engineering teams to provide accurate details about which identity providers we support for SSO and identity-threat detection.",
+      "sources": [],
+      "confidence": 0.0,
+      "needs_human_review": true,
+      "review_reason": "No KB documentation found on identity provider integrations for SSO or identity-threat detection. Searched product_docs and past_rfps with multiple queries but found no relevant content. Subject matter expert input required.",
+      "question": "Which identity providers do you integrate with for SSO and for identity-threat detection?",
+      "categories": [
+        "technical"
+      ]
+    },
+    {
+      "question_id": "Q7",
+      "answer": "Helios Security maintains the following compliance certifications:\n\n**SOC 2 Type II** \u2013 Active\n- Auditor: Schellman & Co.\n- Most recent audit: January 15, 2024 (report period: January 1, 2023 \u2013 December 31, 2023)\n- Scope: Helios Cloud Platform (EDR, SIEM, MDR)\n\n**ISO/IEC 27001:2022** \u2013 Active\n- Auditor: BSI Group\n- Most recent audit: November 2, 2023\n- Certificate valid through: November 1, 2026\n- Scope: Information Security Management System for Helios Cloud\n\n**PCI DSS v4.0 Level 1 Service Provider** \u2013 Active\n- Auditor: Coalfire\n- Most recent audit: September 18, 2023\n- Scope: Cardholder-data-adjacent log processing\n\n**HIPAA Security Rule** \u2013 Attested\n- Assessor: CynergisTek\n- Most recent assessment: February 20, 2024\n- Scope: ePHI handling in MDR workflows\n- Business Associate Agreement available upon request\n\n**FedRAMP Moderate** \u2013 In Process\n- Sponsor: U.S. Department of Energy\n- Third-Party Assessment Organization (3PAO): Kratos\n- Expected Authority to Operate (ATO): Q3 2024\n- Scope: Helios GovCloud\n\n**CSA STAR Level 1 (Self-Assessment)** \u2013 Active\n- Most recent submission: January 30, 2024\n\nAudit reports and certificates are available under NDA upon request.",
+      "sources": [
+        {
+          "doc_id": "cert-soc2",
+          "title": "SOC 2 Type II"
+        },
+        {
+          "doc_id": "cert-iso27001",
+          "title": "ISO/IEC 27001:2022"
+        },
+        {
+          "doc_id": "cert-pcidss",
+          "title": "PCI DSS v4.0 Level 1 Service Provider"
+        },
+        {
+          "doc_id": "cert-hipaa",
+          "title": "HIPAA Security Rule"
+        },
+        {
+          "doc_id": "cert-fedramp",
+          "title": "FedRAMP Moderate"
+        },
+        {
+          "doc_id": "cert-csa-star",
+          "title": "CSA STAR Level 1"
+        }
+      ],
+      "confidence": 0.95,
+      "needs_human_review": true,
+      "review_reason": " [flagged by consistency reviewer]",
+      "question": "List all current compliance certifications, auditors, and most recent audit dates.",
+      "categories": [
+        "compliance"
+      ]
+    },
+    {
+      "question_id": "Q8",
+      "answer": "Helios Security is currently **In Process** for FedRAMP Moderate authorization for Helios GovCloud. Our sponsoring agency is the Department of Energy, and we are working with Kratos SecureInfo as our Third Party Assessment Organization (3PAO). The authorization scope covers the Helios GovCloud environment, which provides our full security platform suite (EDR, SIEM, MDR) in a FedRAMP-compliant architecture. Our initial expected Authority to Operate (ATO) date was Q3 2024.",
+      "sources": [
+        {
+          "doc_id": "cert-fedramp",
+          "title": "FedRAMP Moderate"
+        }
+      ],
+      "confidence": 0.6,
+      "needs_human_review": true,
+      "review_reason": "Expected ATO date (2024-Q3) is nearly 2 years past. Status shows 'in_process' but timeline should be verified and updated with current target date or completion status.",
+      "question": "What is your FedRAMP authorization status?",
+      "categories": [
+        "compliance"
+      ]
+    },
+    {
+      "question_id": "Q9",
+      "answer": "Helios Security conducts third-party penetration testing annually. Our penetration testing provider is NCC Group, with testing scoped to cover the cloud platform, agent, and console. An executive summary of the most recent assessment is available under NDA upon request.",
+      "sources": [
+        {
+          "doc_id": "rfp-2024-acme-bank",
+          "title": "ACME Bank RFP Response (Feb 2024)"
+        }
+      ],
+      "confidence": 0.65,
+      "needs_human_review": true,
+      "review_reason": "KB source references October 2023 pentest date, which is stale (2.5+ years old). Cadence and provider confirmed, but most recent assessment date should be verified and updated before submission.",
+      "question": "Describe your penetration testing cadence and provider.",
+      "categories": [
+        "compliance"
+      ]
+    },
+    {
+      "question_id": "Q10",
+      "answer": "Information not available in current documentation. This requires input from Helios Finance or Legal department regarding current cyber liability and tech E&O insurance policies and coverage limits.",
+      "sources": [],
+      "confidence": 0.0,
+      "needs_human_review": true,
+      "review_reason": "No KB documentation found for insurance policies. Cyber liability and tech E&O coverage limits must be provided by Finance/Legal team.",
+      "question": "Do you carry cyber liability / tech E&O insurance? State coverage limits.",
+      "categories": [
+        "company-info"
+      ]
+    },
+    {
+      "question_id": "Q11",
+      "answer": "**Helios Security Annual Pricing (per endpoint)**\n\n| Endpoints | EDR Only | EDR + MDR |\n|-----------|----------|------------|\n| **500** | $48/endpoint<br>**$24,000 annual** | $72/endpoint<br>**$36,000 annual** |\n| **2,500** | $43.20/endpoint (10% volume discount)<br>**$108,000 annual** | $64.80/endpoint (10% volume discount)<br>**$162,000 annual** |\n| **10,000** | $33.60/endpoint (30% volume discount)<br>**$336,000 annual** | $50.40/endpoint (30% volume discount)<br>**$504,000 annual** |\n\n**Volume Discounts:**\n- 1,000-4,999 endpoints: 10%\n- 5,000-9,999 endpoints: 22%\n- 10,000+ endpoints: 30%\n\n**Contract Terms:**\n- Minimum 12-month term; annual payment in advance\n- Multi-year discounts available (24-month: additional 5%; 36-month: additional 8%)\n- Quarterly billing available for contracts >5,000 endpoints\n- Quarterly true-up for endpoint growth at then-current tier pricing",
+      "sources": [
+        {
+          "doc_id": "pricing-2024",
+          "title": "Helios Security Commercial Price Sheet \u2014 FY2024"
+        }
+      ],
+      "confidence": 0.95,
+      "needs_human_review": false,
+      "review_reason": null,
+      "question": "Provide per-endpoint annual pricing for 500, 2,500, and 10,000 endpoints (EDR only and EDR+MDR).",
+      "categories": [
+        "pricing"
+      ]
+    },
+    {
+      "question_id": "Q12",
+      "answer": "The minimum contract term is 12 months. Multi-year discounts are available: 5% for 24-month commitments and 8% for 36-month commitments. These discounts apply to the annual subscription price and stack with volume-based discounts.",
+      "sources": [
+        {
+          "doc_id": "pricing-2024",
+          "title": "Helios Security Commercial Price Sheet \u2014 FY2024"
+        }
+      ],
+      "confidence": 0.95,
+      "needs_human_review": false,
+      "review_reason": null,
+      "question": "What is the minimum contract term and what multi-year discounts are available?",
+      "categories": [
+        "pricing"
+      ]
+    },
+    {
+      "answer": "I'll search the knowledge base for information about professional services and onboarding to answer this pricing question.",
+      "sources": [],
+      "confidence": 0.0,
+      "needs_human_review": true,
+      "review_reason": "Drafter output was not valid JSON: Expecting value: line 1 column 1 (char 0)",
+      "question_id": "Q13",
+      "question": "Are professional services / onboarding included? At what threshold?",
+      "categories": [
+        "pricing"
+      ]
+    },
+    {
+      "question_id": "Q14",
+      "answer": "We do not have sufficient documentation available to provide a complete answer regarding Helios Security's data residency options and EU customer data isolation capabilities at this time. This question requires input from our infrastructure and compliance teams to accurately describe regional deployment options, data sovereignty controls, and isolation mechanisms for European customers.",
+      "sources": [],
+      "confidence": 0.0,
+      "needs_human_review": true,
+      "review_reason": "No information found in KB regarding data residency options, regional deployments, or EU data isolation mechanisms. This is a critical gap for a financial services prospect requiring GDPR compliance and data sovereignty controls. Requires input from infrastructure/compliance teams.",
+      "question": "Describe your data residency options and how EU customer data is isolated.",
+      "categories": [
+        "technical",
+        "compliance"
+      ]
+    },
+    {
+      "question_id": "Q15",
+      "answer": "This question requires technical documentation not currently available in the knowledge base. A complete answer covering encryption standards (at rest and in transit), cipher specifications, and key management options (Helios-managed, customer-managed, BYOK, HSM integration) must be provided by the technical team.",
+      "sources": [],
+      "confidence": 0.0,
+      "needs_human_review": true,
+      "review_reason": "KB contains no documentation on encryption implementations or key management capabilities. Retrieved compliance certifications (SOC 2, ISO 27001, PCI DSS) imply encryption controls but lack technical specifics required for this answer.",
+      "question": "What encryption is applied at rest and in transit? Which key-management options are offered?",
+      "categories": [
+        "technical",
+        "compliance"
+      ]
+    },
+    {
+      "question_id": "Q16",
+      "answer": "Unable to provide a sourced answer. The knowledge base contains no documentation on Helios Security's data retention policy for raw telemetry, alerts, or audit logs. This requires input from the product or compliance team.",
+      "sources": [],
+      "confidence": 0.0,
+      "needs_human_review": true,
+      "review_reason": "No KB material found on data retention policy for telemetry, alerts, or audit logs. This is critical technical/compliance information for financial services prospects and must be answered by SME with authoritative retention timeframes and policy details.",
+      "question": "What is your data retention policy for raw telemetry, alerts, and audit logs?",
+      "categories": [
+        "technical",
+        "compliance"
+      ]
+    },
+    {
+      "question_id": "Q17",
+      "answer": "Information about Helios Security's console RBAC model and SCIM support is not available in the current knowledge base. This question requires input from the product or engineering team to provide accurate details about role-based access control architecture, supported roles/permissions, and SCIM 2.0 implementation status.",
+      "sources": [],
+      "confidence": 0.0,
+      "needs_human_review": true,
+      "review_reason": "No documentation found in KB regarding console RBAC model or SCIM support. Technical architecture details needed from product/engineering team.",
+      "question": "Describe your console RBAC model and SCIM support.",
+      "categories": [
+        "technical"
+      ]
+    },
+    {
+      "question_id": "Q18",
+      "answer": "Unable to provide answer - no relevant content found in knowledge base regarding remote response actions executable from console or API.",
+      "sources": [],
+      "confidence": 0.0,
+      "needs_human_review": true,
+      "review_reason": "No KB content found after searching multiple terms: 'remote response actions', 'console API', 'endpoint containment', 'incident response capabilities', 'remediation'. This question requires technical documentation about Helios's remote response capabilities (e.g., isolation, process termination, file quarantine, memory collection, script execution) that is not present in the knowledge base.",
+      "question": "What remote response actions can be executed from the console or API?",
+      "categories": [
+        "technical"
+      ]
+    },
+    {
+      "question_id": "Q19",
+      "answer": "Information regarding our console availability SLA and associated service credit schedule is not available in our current knowledge base. This requires input from our technical and legal teams to provide accurate SLA commitments and credit terms.",
+      "sources": [],
+      "confidence": 0.0,
+      "needs_human_review": true,
+      "review_reason": "No KB content found on console availability SLA or service credit schedule. Searched multiple terms (uptime SLA, availability guarantee, service credits, downtime compensation) across all categories with no relevant results. This technical/pricing question requires SME input from product and legal teams to provide accurate SLA percentage, measurement methodology, and credit schedule.",
+      "question": "What is your console availability SLA and the associated service credit schedule?",
+      "categories": [
+        "technical",
+        "pricing"
+      ]
+    },
+    {
+      "question_id": "Q20",
+      "answer": "Helios engages the following sub-processors:\n\n\u2022 **AWS** \u2013 Infrastructure as a Service (all regions)\n\u2022 **Snowflake** \u2013 Analytics warehouse (US-East and EU-Central only)\n\u2022 **Twilio** \u2013 SMS and voice alerting (US)\n\u2022 **Zendesk** \u2013 Support ticketing (US; no customer telemetry data)\n\n**Notification Policy**: Helios provides 30-day advance notice of any sub-processor additions or changes via our trust portal at trust.helios.security. Customers may object to new sub-processors within this notice period in accordance with our Data Processing Agreement, which incorporates the 2021 EU Standard Contractual Clauses (modules 2 & 3) and UK IDTA.",
+      "sources": [
+        {
+          "doc_id": "doc-dpa-subprocessors",
+          "title": "Data Processing Agreement & Sub-Processor List"
+        }
+      ],
+      "confidence": 0.9,
+      "needs_human_review": false,
+      "review_reason": null,
+      "question": "List your current sub-processors and your notification policy for changes.",
+      "categories": [
+        "compliance"
+      ]
+    },
+    {
+      "question_id": "Q21",
+      "answer": "We are unable to provide specific customer counts or reference names for the financial services vertical at this time without access to our current customer database and clearance for reference disclosure.",
+      "sources": [],
+      "confidence": 0.0,
+      "needs_human_review": true,
+      "review_reason": "No KB content found for financial services customer counts or references. This question requires: (1) current count of financial services customers, (2) two referenceable customer names with contact information. Sales/account team must provide this information with proper reference authorization.",
+      "question": "How many customers do you serve in the financial services vertical? Name 2 references.",
+      "categories": [
+        "company-info"
+      ]
+    },
+    {
+      "question_id": "Q22",
+      "answer": "Unable to provide company information. The knowledge base does not contain documentation on Helios Security's founding year, headquarters location, employee count, or funding stage.",
+      "sources": [],
+      "confidence": 0.0,
+      "needs_human_review": true,
+      "review_reason": "No KB documents found for company information. Searched company_info and general categories for founding year, headquarters, employee count, and funding stage with no results. This fundamental company data must be added to the knowledge base or provided by a human reviewer.",
+      "question": "Provide company founding year, headquarters, employee count, and funding stage.",
+      "categories": [
+        "company-info"
+      ]
+    },
+    {
+      "question_id": "Q23",
+      "answer": "Helios Security maintains strong customer retention metrics. Our gross logo retention for FY2023 was 94%, and net revenue retention was 118%. The NRR above 100% reflects expansion within our existing customer base through increased adoption and additional security modules.",
+      "sources": [
+        {
+          "doc_id": "rfp-2024-acme-bank",
+          "title": "ACME Bank RFP Response (Feb 2024)"
+        }
+      ],
+      "confidence": 0.95,
+      "needs_human_review": false,
+      "review_reason": null,
+      "question": "What is your customer logo retention and net revenue retention?",
+      "categories": [
+        "company-info"
+      ]
+    },
+    {
+      "question_id": "Q24",
+      "answer": "Yes, Helios Security offers a no-cost proof-of-concept. The POC includes up to 250 endpoints for a 30-day evaluation period, with a dedicated Solutions Engineer to support your team throughout the trial. If you convert to a paid subscription following the POC, you receive credit for any data already ingested during the evaluation period, ensuring a seamless transition with no duplication of effort or cost.",
+      "sources": [
+        {
+          "doc_id": "rfp-2024-cascade-energy",
+          "title": "Cascade Energy RFP Response (Mar 2024)"
+        }
+      ],
+      "confidence": 0.75,
+      "needs_human_review": true,
+      "review_reason": "POC terms sourced from Mar 2024 RFP response; recommend verifying current POC policy and any financial services sector-specific terms for Summit Insurance Group",
+      "question": "Do you offer a no-cost proof-of-concept? What are the terms?",
+      "categories": [
+        "pricing"
+      ]
+    },
+    {
+      "question_id": "Q25",
+      "answer": "This question requires information about Helios Security's post-quantum cryptography roadmap that is not currently available in our knowledge base. A subject matter expert from our cryptography or product engineering team should provide details on: (1) timeline for adopting NIST-standardized post-quantum algorithms, (2) current encryption standards in use, (3) migration strategy for quantum-resistant cryptography, and (4) any research partnerships or pilot programs underway.",
+      "sources": [],
+      "confidence": 0.0,
+      "needs_human_review": true,
+      "review_reason": "No KB content found on post-quantum or quantum-resistant cryptography roadmap. Requires input from product/engineering leadership on PQC strategy and timeline.",
+      "question": "Describe your roadmap for post-quantum / quantum-resistant cryptography.",
+      "categories": [
+        "technical"
+      ]
+    }
+  ],
+  "consistency_flags": [
+    {
+      "question_ids": [
+        "Q7",
+        "Q8"
+      ],
+      "issue": "Q7 states 'Expected Authority to Operate (ATO): Q3 2024' as if it's a future date, but Q8 acknowledges this date is 'nearly 2 years past' (current date: 2026-04-29). Q7 presents stale information as current while Q8 correctly identifies the timeline issue.",
+      "severity": "high"
+    },
+    {
+      "question_ids": [
+        "Q9"
+      ],
+      "issue": "Penetration testing date from October 2023 is 2.5+ years old as of April 2026. While flagged for human review, this staleness creates a negative impression and should be updated before submission.",
+      "severity": "medium"
+    },
+    {
+      "question_ids": [
+        "Q1",
+        "Q2",
+        "Q5",
+        "Q6",
+        "Q10",
+        "Q13",
+        "Q14",
+        "Q15",
+        "Q16",
+        "Q17",
+        "Q18",
+        "Q19",
+        "Q21",
+        "Q22",
+        "Q25"
+      ],
+      "issue": "15 out of 25 questions (60%) have no sourced answers. Multiple critical technical and compliance questions (encryption, data retention, RBAC, remote response, data residency) remain unanswered, creating an inconsistent response profile that may raise concerns about product maturity or documentation gaps.",
+      "severity": "medium"
+    }
+  ],
+  "suggested_rewrites": [
+    {
+      "question_id": "Q7",
+      "answer": "Helios Security maintains the following compliance certifications:\n\n**SOC 2 Type II** \u2013 Active\n- Auditor: Schellman & Co.\n- Most recent audit: January 15, 2024 (report period: January 1, 2023 \u2013 December 31, 2023)\n- Scope: Helios Cloud Platform (EDR, SIEM, MDR)\n\n**ISO/IEC 27001:2022** \u2013 Active\n- Auditor: BSI Group\n- Most recent audit: November 2, 2023\n- Certificate valid through: November 1, 2026\n- Scope: Information Security Management System for Helios Cloud\n\n**PCI DSS v4.0 Level 1 Service Provider** \u2013 Active\n- Auditor: Coalfire\n- Most recent audit: September 18, 2023\n- Scope: Cardholder-data-adjacent log processing\n\n**HIPAA Security Rule** \u2013 Attested\n- Assessor: CynergisTek\n- Most recent assessment: February 20, 2024\n- Scope: ePHI handling in MDR workflows\n- Business Associate Agreement available upon request\n\n**FedRAMP Moderate** \u2013 In Process\n- Sponsor: U.S. Department of Energy\n- Third-Party Assessment Organization (3PAO): Kratos\n- Status: Initial target ATO date of Q3 2024 has passed; current status and revised timeline require verification from compliance team\n- Scope: Helios GovCloud\n\n**CSA STAR Level 1 (Self-Assessment)** \u2013 Active\n- Most recent submission: January 30, 2024\n\nAudit reports and certificates are available under NDA upon request."
+    }
+  ]
+}
